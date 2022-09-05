@@ -1,0 +1,72 @@
+.login {    
+    font-family: "Lora", sans-serif;
+}
+
+.login-form {    
+    margin-top: 50px;
+    padding: 70px;
+    padding-right: 10px;
+}
+
+.greet {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.login img {
+    height: 87vh;
+    width: 100vw;
+}
+
+.login-btn {
+    margin-bottom: 20px;
+}
+
+.login .action {
+    text-decoration: none;
+    color:#157347;
+}
+
+.login .action:hover {
+    text-decoration: underline;
+    color:#104b30;
+}
+
+
+@media (max-width:768px) {    
+    .login-form {    
+        margin-top: 50px;
+        padding: 10px;
+        padding-right: 0px;
+    }
+
+    .login-btn {
+        width: 100%;
+    }
+    
+    .login img {
+        height: 85.5vh;
+    }
+}
+
+
+@media (max-width:450px) {
+    .login {
+        height:86vh;
+        background:linear-gradient( rgba(144, 142, 142, 0.7), rgba(123, 190, 149, 0.3)), url("https://images.pexels.com/photos/7014337/pexels-photo-7014337.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        background-size: cover;
+    }
+    
+    .login img {
+        display: none;
+    }
+    
+    .login-form {    
+        margin-top: 30px;
+        padding: 0px;
+    }
+
+    .login-btn {
+        width: 100%;
+    }
+}

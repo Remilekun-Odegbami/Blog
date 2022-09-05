@@ -1,0 +1,77 @@
+.settings {    
+    font-family: "Lora", sans-serif;
+    margin-top: 20px;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+
+.settings .heading .title {
+    color: #444;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.settings .delete-acc {
+    font-size: 1em;
+    color: tomato;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.settings .settings-form img {
+    height: 70px;
+    width: 70px;
+    border-radius: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.settings .fa-user-circle-o {
+    color: #157347;
+    font-size: 1.5em;
+    cursor: pointer;
+    text-align: center;
+}
+
+.settings .update {
+    font-weight: 500;
+}
+
+.settings .settings-form .update-btn {
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .settings .heading .title {
+        font-size: 1.7em;
+    }
+    .settings .delete-acc {
+        font-size: .9em;
+        color: tomato;
+        font-weight: 600;
+    }
+    
+}
+
+@media (max-width: 500px) {
+    .settings .heading .title {
+        font-size: 1.2em;
+    }
+    .settings .delete-acc {
+        font-size: .7em;
+        color: tomato;
+        font-weight: 600;
+    }
+    
+}
