@@ -10,7 +10,7 @@ import Contact from './pages/contact/Contact';
 
 
 function App() {
-  const user = false;
+  const user = true;
   return (
     <div className="App">
       <header className="App-header">
