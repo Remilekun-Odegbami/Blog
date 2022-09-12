@@ -6,7 +6,7 @@ export default function Topbar() {
   const user = false;
   return (
     <>
-      <header className='top'>
+      <header>
         <nav className="navbar navbar-expand-lg navbar-light bg-light top">
           <div className="container">
             <Link to="/" className='text-uppercase navbar-brand'>My Blog</Link>
@@ -15,7 +15,7 @@ export default function Topbar() {
             </button>
             <div className="collapse navbar-collapse pages" id="navbarSupportedContent">
               <div className="navbar-nav me-auto mb-2 ">
-                <Link className='nav-item ml-5' to="/post/:postId">posts</Link>
+                <Link className='nav-item ml-5' to="/">posts</Link>
                 <Link className='nav-item ml-5' to="contact">Contact</Link>
                 {user && <Link className='nav-item ml-5' to="/write">write</Link>}
                 {user && <span className='nav-item ml-5'>log out</span>}

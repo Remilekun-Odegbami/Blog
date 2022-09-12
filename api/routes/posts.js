@@ -7,7 +7,11 @@ router.post('/', async (req, res) => {
     const newPost = new Post(req.body);
     try {
         const savedPost = await newPost.save();
-        res.status(200).json(savedPost);
+        res.status(200).json({
+            savedPost: savedPost,
+            message: "New Post was created successfully",
+            success: 1
+        });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -27,14 +31,21 @@ router.put("/:id", async (req, res) => {
                 },
                     { new: true }
                 )
-                res.status(200).json(updatedPost);
+                res.status(200).json({
+                    updatedPost: updatedPost,
+                    message: "Post was updated successfully",
+                    success: 1
+                });
             }
             catch (error) {
                 res.status(500).json(err);
             }
 
         } else {
-            res.status(401).json("User not authorized to update post")
+            res.status(401).json({
+                message: "User not authorized to update post",
+                success: 0
+            })
         }
     } catch (err) {
         res.status(500).json(err);
@@ -48,14 +59,23 @@ router.delete("/:id", async (req, res) => {
         if (post.username === req.body.username) {
             try {
                 await post.delete()
-                res.status(200).json("Post has been deleted successfully");
+                res.status(200).json({
+                    message: "Post has been deleted successfully",
+                    success: 1
+                })
+
+                    ();
             }
             catch (error) {
                 res.status(500).json(err);
             }
 
         } else {
-            res.status(401).json("User not authorized to delete post")
+            res.status(401).json({
+                message: "User not authorized to delete post",
+                success: 0
+            })
+
         }
     } catch (err) {
         res.status(500).json(err);

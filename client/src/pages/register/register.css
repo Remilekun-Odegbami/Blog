@@ -4,13 +4,13 @@
 
 .register-form {    
     margin-top: 10px;
-    padding: 70px;
-    padding-right: 10px;
+    padding: 30px 10px;
 }
 
 .greet {
     font-size: 1.5em;
     font-weight: 600;
+    margin-bottom: 30px;
 }
 
 .register img {
@@ -53,10 +53,11 @@
 
 @media (max-width:450px) {
     .register {
-        height:86vh;
-        background:linear-gradient( rgba(87, 85, 85, 0.9), rgba(123, 190, 149, 0.3)), url("https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dfd2ec5a01006fd8c4d7592a381d3776&auto=format&fit=crop&w=1000&q=80");
+        height: 100vh;
+        background:linear-gradient( rgba(36, 36, 36, 0.9), rgba(123, 190, 149, 0.3)), url("https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dfd2ec5a01006fd8c4d7592a381d3776&auto=format&fit=crop&w=1000&q=80");
         background-size: cover;
         color: rgb(237, 233, 233);
+        padding-top: 20px;
     }
 
     .register img {
@@ -73,11 +74,11 @@
     }
 
     .register .action {
-        color: #222;
+        color: rgb(32, 207, 70);
     }
 
     .register .action:hover {
-        color: rgb(68, 67, 67);
+        color: rgb(35, 210, 80);
         font-size: 1.1em;
     }
 }

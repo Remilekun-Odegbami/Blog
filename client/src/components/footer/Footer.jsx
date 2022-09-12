@@ -13,12 +13,12 @@ export default function Footer() {
                     <div className="col-md-4 col-sm-12 offices">
                         <h3 className='footer-sub-header'>Offices</h3>
                         <ul className='row'>
-                            <div className="col-6">
+                            <div className="col-lg-6 col-md-12">
                                 <li className="footer-links"><a href="#">Jos</a></li>
                                 <li className="footer-links"><a href="#">Abuja</a></li>
                                 <li className="footer-links"><a href="#">PortHarcourt</a></li>
                             </div>
-                            <div className="col-6">
+                            <div className="col-lg-6 col-md-12">
                                 <li className="footer-links"><a href="#">Lagos</a></li>
                                 <li className="footer-links"><a href="#">Oyo</a></li>
                                 <li className="footer-links"><a href="#">Cross River</a></li>

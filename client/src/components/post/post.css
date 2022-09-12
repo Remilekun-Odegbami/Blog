@@ -52,7 +52,7 @@
     color: #444;
     line-height: 2;
     font-family: 'Varela Round', sans-serif;
-    text-align: justify;
+    /* text-align: justify; */
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;

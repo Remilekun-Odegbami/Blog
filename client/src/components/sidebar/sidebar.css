@@ -45,6 +45,7 @@
 
 .sidebar-list-item {
     padding-top: 10px;
+    text-transform: capitalize;
 }
 
 .sidebar-item .sidebar-socials {

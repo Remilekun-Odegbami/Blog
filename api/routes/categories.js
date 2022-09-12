@@ -6,7 +6,11 @@ router.post("/", async (req, res) => {
     const newCategory = new Category(req.body);
     try {
         const savedCategory = await newCategory.save();
-        res.status(200).json(savedCategory);
+        res.status(200).json({
+            savedCategory: savedCategory,
+            message: "Category was created successfully",
+            success: 1
+        });
     } catch (err) {
         res.status(500).json(err);
     }

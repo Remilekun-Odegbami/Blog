@@ -2,6 +2,10 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+// security
+const helmet = require("helmet")
+const cors = require("cors");
+
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
@@ -18,6 +22,14 @@ mongoose
     })
     .then(console.log("connected to MongoDb"))
     .catch(err => console.log(err));
+
+const corsOption = {
+    origin: "http://localhost:3000",
+    method: "GET, POST, DELETE, PUT, PATCH",
+}
+
+app.use(helmet());
+app.use(cors(corsOption));
 
 const storage = multer.diskStorage({
     destination: (req, file, callBack) => {

@@ -1,8 +1,19 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import './sidebar.css';
 import SideImg from './../../Media/Odegbami Remilekun.jpeg';
+import { Link } from 'react-router-dom';
 
 export default function Sidebar() {
+    const [cats, setCats] = useState([]);
+
+    useEffect(() => {
+        const getCats = async () => {
+            const res = await axios.get("http://localhost:5000/api/categories");
+            setCats(res.data)
+        }
+        getCats()
+    }, [])
     return (
         <div className='sidebar'>
             <div className="container">
@@ -15,18 +26,23 @@ export default function Sidebar() {
                     <div className="sidebar-item">
                         <h3 className="title">Categories</h3>
                         <ul className="sidebar-list row">
-                            <div className="col-6">
-                                <a href=""><li className="sidebar-list-item">Life</li> </a>
-                                <a href=""><li className="sidebar-list-item">Music</li> </a>
+                            {
+                                cats.map(cat => (
+                                    <div className="col-6" key={cat._id}>
+                                        <Link to={`/?category=${cat.name}`}><li className="sidebar-list-item"> {cat.name}</li> </Link>
+                                    </div>
+
+                                ))
+                            }
+                            {/* <a href=""><li className="sidebar-list-item">Music</li> </a>
                                 <a href=""><li className="sidebar-list-item">Style</li> </a>
-                                <a href=""><li className="sidebar-list-item">Sport</li> </a>
-                            </div>
-                            <div className="col-6">
+                                <a href=""><li className="sidebar-list-item">Sport</li> </a> */}
+                            {/* <div className="col-6">
                                 <a href=""><li className="sidebar-list-item">Tech</li> </a>
                                 <a href=""><li className="sidebar-list-item">Cinema</li> </a>
                                 <a href=""><li className="sidebar-list-item">Family</li> </a>
                                 <a href=""><li className="sidebar-list-item">Food</li> </a>
-                            </div>
+                            </div> */}
                         </ul>
                     </div>
                     <div className="sidebar-item">

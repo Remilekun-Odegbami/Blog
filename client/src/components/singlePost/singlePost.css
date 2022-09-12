@@ -24,8 +24,20 @@
 .singlePost .editor {
     color: rgb(53, 53, 53);
     font-size: 1em;
-    margin: 10px 0 5px 0;    
+    margin: 10px 0 5px 0;
 }
+
+.singlePost .editor a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.singlePost .editor a:hover {
+    text-decoration: underline;
+    color: green;
+}
+
 
 .singlePost .icons {
     margin: 10px;
@@ -63,5 +75,14 @@
 @media (max-width: 450px) {     
     .singlePost .icons i{
         margin-right: 5px;
-    }    
+        font-size: .97em;
+    }  
+
+    .singlePost .author {
+        font-size: .95em;
+    }
+    
+    .singlePost .date {
+        font-size: .85em;
+    }
 }

@@ -1,0 +1,12 @@
+.message-style {
+    width: 300px;
+    height: max-content;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 500;
+    font-style: normal;
+    background-color: rgb(80, 78, 78);
+    padding: 10px;
+}
+

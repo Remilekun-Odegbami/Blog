@@ -7,6 +7,7 @@ import Login from "./pages/login/Login";
 import Register from './pages/register/Register';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Contact from './pages/contact/Contact';
+import Posts from "./components/posts/Posts";
 
 
 function App() {
@@ -24,11 +25,13 @@ function App() {
             <Route path="/register" element={user ? <Home /> : <Register />} />
             <Route path="/post/:postId" element={<Single />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/posts" element={<Posts />} />
           </Routes>
         </BrowserRouter>
       </header>
     </div>
   );
+
 }
 
 export default App;

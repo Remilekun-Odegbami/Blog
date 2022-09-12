@@ -1,64 +1,29 @@
 import React from 'react';
-import SideImg from './../../Media/Odegbami Remilekun.jpeg';
 import './post.css';
+import { Link } from 'react-router-dom';
 
-export default function Post() {
+export default function Post({ post }) {
     return (
         <div className="post">
-            <div className="row">
-                <div className="col-md-6 col-sm-12">
-                    <img src={SideImg} alt="" className='img-fluid' />
-                    <div className="post-info">
-                        <div className="post-categories">
-                            <span className="post-cat"><a href="">Music</a></span>
-                            <span className="post-cat">| </span>
-                            <span className="post-cat"><a href="">Life</a></span>
-                        </div>
-                        <h5 className="post-header"><a href="">Lorem ipsum dolor sit amet</a></h5>
-                        <p className="time">1 hour ago</p>
+            <div className="col-12">
+                {post.image && (
+                    <img src={post.image} alt={post.name} className='img-fluid' />
+                )}
+                <div className="post-info">
+                    <div className="post-categories">
+                        {
+                            post.categories.map((cats) => {
+                                <span className="post-cat"><a href="">{cats.name}</a></span>
+                            })
+                        }
+                        {/* <span className="post-cat">| </span>
+                        <span className="post-cat"><a href="">Life</a></span> */}
                     </div>
-                    <p className="post-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod consequuntur ipsa eum, dolore temporibus ipsum illum perferendis dolores ut placeat, nesciunt nostrum quaerat numquam, sint esse earum? Aliquam, adipisci non cupiditate quasi molestias tenetur odio ipsum ratione veritatis nobis! Eius id amet optio neque non culpa quisquam aut debitis ipsa.</p>
+                    <h5 className="post-header">
+                        <Link to={`/post/${post._id}`}>{post.title}</Link> </h5>
+                    <p className="time"> {new Date(post.createdAt).toDateString()} </p>
                 </div>
-                <div className="col-md-6 col-sm-12">
-                    <img src="https://images.pexels.com/photos/6633446/pexels-photo-6633446.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className='img-fluid' />
-                    <div className="post-info">
-                        <div className="post-categories">
-                            <span className="post-cat"><a href="">Music</a></span>
-                            <span className="post-cat">| </span>
-                            <span className="post-cat"><a href="">Life</a></span>
-                        </div>
-                        <h5 className="post-header"><a href="">Lorem ipsum dolor sit amet</a></h5>
-                        <p className="time">1 hour ago</p>
-                    </div>
-                    <p className="post-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod consequuntur ipsa eum, dolore temporibus ipsum illum perferendis dolores ut placeat, nesciunt nostrum quaerat numquam, sint esse earum? Aliquam, adipisci non cupiditate quasi molestias tenetur odio ipsum ratione veritatis nobis! Eius id amet optio neque non culpa quisquam aut debitis ipsa.</p>
-                </div>
-                <div className="w-100"></div>
-                <div className="col-md-6 col-sm-12">
-                    <img src="https://images.pexels.com/photos/6633446/pexels-photo-6633446.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className='img-fluid' />
-                    <div className="post-info">
-                        <div className="post-categories">
-                            <span className="post-cat"><a href="">Music</a></span>
-                            <span className="post-cat">| </span>
-                            <span className="post-cat"><a href="">Life</a></span>
-                        </div>
-                        <h5 className="post-header"><a href="">Lorem ipsum dolor sit amet</a></h5>
-                        <p className="time">1 hour ago</p>
-                    </div>
-                    <p className="post-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod consequuntur ipsa eum, dolore temporibus ipsum illum perferendis dolores ut placeat, nesciunt nostrum quaerat numquam, sint esse earum? Aliquam, adipisci non cupiditate quasi molestias tenetur odio ipsum ratione veritatis nobis! Eius id amet optio neque non culpa quisquam aut debitis ipsa.</p>
-                </div>
-                <div className="col-md-6 col-sm-12">
-                    <img src="https://images.pexels.com/photos/6633446/pexels-photo-6633446.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className='img-fluid' />
-                    <div className="post-info">
-                        <div className="post-categories">
-                            <span className="post-cat"><a href="">Music</a></span>
-                            <span className="post-cat">| </span>
-                            <span className="post-cat"><a href="">Life</a></span>
-                        </div>
-                        <h5 className="post-header"><a href="">Lorem ipsum dolor sit amet</a></h5>
-                        <p className="time">1 hour ago</p>
-                    </div>
-                    <p className="post-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod consequuntur ipsa eum, dolore temporibus ipsum illum perferendis dolores ut placeat, nesciunt nostrum quaerat numquam, sint esse earum? Aliquam, adipisci non cupiditate quasi molestias tenetur odio ipsum ratione veritatis nobis! Eius id amet optio neque non culpa quisquam aut debitis ipsa.</p>
-                </div>
+                <p className="post-text"> {post.desc} </p>
             </div>
         </div>
     )
