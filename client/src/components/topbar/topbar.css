@@ -20,11 +20,12 @@ header nav .nav-item {
     cursor: pointer;
 }
 
-.navbar .navbar-brand  {
+.navbar .navbar-brand {
     font-weight: 600;
 }
 
-header nav .nav-item:hover, .navbar .navbar-brand:hover {
+header nav .nav-item:hover,
+.navbar .navbar-brand:hover {
     color: rgb(67, 66, 66);
     text-decoration: underline;
 }
@@ -35,7 +36,7 @@ header nav .pages {
     background-color: #F8F9FA;
 }
 
-header nav .pages .nav-item{
+header nav .pages .nav-item {
     margin-left: 20px;
 }
 
@@ -69,18 +70,28 @@ header nav .pages .nav-item{
         padding-bottom: 20px;
     }
 
-    header nav .pages .nav-item{
+    header nav .pages .nav-item {
         padding: 10px;
     }
 
+    .navbar .search-group {
+        height: 45px;
+        margin-top: 12px;
+        padding-right: 100px;
+    }
+
     .top_right img {
-        margin-left: 25px;
+        margin-right: 0;
     }
 }
 
 @media (max-width: 500px) {
-   
+
     .top_center .nav .nav-item {
         font-size: 14px;
+    }
+
+    .navbar .search-group {
+        padding-right: 15px;
     }
 }

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import './register.css';
 import axios from 'axios';
 import Messages from '../../components/message/Messages';
 import { Spinner } from "react-bootstrap";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Register() {
     const [messages, setMessage] = useState("");
@@ -33,7 +33,6 @@ export default function Register() {
         } catch (error) {
             if (error.response) {
                 setMessage(error.response.data.message);
-                console.log(error.response);
             }
         }
     }
@@ -113,14 +112,13 @@ export default function Register() {
                                 )
                             }
                         </button>
-                        <h5>Have an account? <a href="" className='action'>Login</a></h5>
+                        <h5>Have an account? <Link to="/login" className='action'>Login</Link></h5>
                     </form>
                 </div>
                 <div className="col-md-6">
                     <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dfd2ec5a01006fd8c4d7592a381d3776&auto=format&fit=crop&w=1000&q=80" alt="" className='img-fluid' />
                 </div>
             </div>
-
         </div>
     )
 }

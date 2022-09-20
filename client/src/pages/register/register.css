@@ -10,7 +10,7 @@
 .greet {
     font-size: 1.5em;
     font-weight: 600;
-    margin-bottom: 30px;
+    margin: 30px 0 10px 0;
 }
 
 .register img {

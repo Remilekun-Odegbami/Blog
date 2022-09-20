@@ -3,7 +3,7 @@ import './messages.css'
 const Messages = ({ messages }) => {
     return (
         <div className='message-style'>
-            <p className="paragrah">{messages}</p>
+            <p className="paragraph">{messages}</p>
         </div>
     )
 }
