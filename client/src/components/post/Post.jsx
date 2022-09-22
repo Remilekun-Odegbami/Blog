@@ -3,11 +3,12 @@ import './post.css';
 import { Link } from 'react-router-dom';
 
 export default function Post({ post }) {
+    const postFolder = "http://localhost:5000/Media/"
     return (
         <div className="post">
             <div className="col-12">
                 {post.image && (
-                    <img src={post.image} alt={post.name} className='img-fluid' />
+                    <img src={postFolder + post.image} alt={post.name} className='img-fluid' />
                 )}
                 <div className="post-info">
                     <div className="post-categories">

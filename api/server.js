@@ -1,6 +1,8 @@
 const express = require("express");
+const multer = require("multer");
 const app = express();
 const dotenv = require("dotenv");
+const path = require("path");
 const mongoose = require("mongoose");
 // security
 const helmet = require("helmet")
@@ -10,10 +12,10 @@ const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
-const multer = require("multer");
 
 dotenv.config();
 app.use(express.json());
+app.use("/Media", express.static(path.join(__dirname, "/Media")))
 
 mongoose
     .connect(process.env.Mongo_URL, {

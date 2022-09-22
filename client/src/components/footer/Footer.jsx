@@ -37,7 +37,7 @@ export default function Footer() {
                         </div>
                         <div className="col-12">
                             <i className="fa fa-envelope"></i> {""}
-                            info@myblog.com
+                            info@remblog.com
                         </div>
                     </div>
                 </div>

@@ -13,7 +13,11 @@ router.post('/', async (req, res) => {
             success: 1
         });
     } catch (err) {
-        res.status(500).json(err);
+        res.status(409).json({
+            err,
+            message: "Post not created because title or content already exists in blog. Please use a different title or content",
+            success: 0
+        });
     }
 
 })
@@ -38,7 +42,11 @@ router.put("/:id", async (req, res) => {
                 });
             }
             catch (error) {
-                res.status(500).json(err);
+                res.status(401).json({
+                    error,
+                    message: "User not authorized to edit post",
+                    success: 0
+                });;
             }
 
         } else {
@@ -63,14 +71,13 @@ router.delete("/:id", async (req, res) => {
                     message: "Post has been deleted successfully",
                     success: 1
                 })
-
-                    ();
             }
             catch (error) {
                 res.status(500).json(err);
             }
 
-        } else {
+        }
+        else {
             res.status(401).json({
                 message: "User not authorized to delete post",
                 success: 0
@@ -78,7 +85,10 @@ router.delete("/:id", async (req, res) => {
 
         }
     } catch (err) {
-        res.status(500).json(err);
+        res.status(500).json({
+            message: "Post not deleted. Please try again",
+            success: 0
+        });
     }
 })
 
@@ -88,7 +98,11 @@ router.get('/:id', async (req, res) => {
         const post = await Post.findById(req.params.id);
         res.status(200).json(post);
     } catch (err) {
-        res.status(500).json(err);
+        res.status(500).json({
+            err,
+            message: "Cannot get post. Please check your connection",
+            success: 0
+        });
     }
 })
 
@@ -111,7 +125,11 @@ router.get('/', async (req, res) => {
         }
         res.status(200).json(posts);
     } catch (err) {
-        res.status(500).json(err);
+        res.status(500).json({
+            err,
+            message: "Cannot get posts at this time. Please check your connection",
+            success: 0
+        });
     }
 })
 

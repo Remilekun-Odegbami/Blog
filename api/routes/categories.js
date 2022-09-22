@@ -12,7 +12,11 @@ router.post("/", async (req, res) => {
             success: 1
         });
     } catch (err) {
-        res.status(500).json(err);
+        res.status(400).json({
+            err,
+            message: "Cannot create categories",
+            success: 0
+        });
     }
 })
 
@@ -22,7 +26,11 @@ router.get("/", async (req, res) => {
         const allCategories = await Category.find();
         res.status(200).json(allCategories);
     } catch (err) {
-        res.status(500).json(err);
+        res.status(500).json({
+            err,
+            message: "Cannot get categories",
+            success: 0
+        });
     }
 })
 

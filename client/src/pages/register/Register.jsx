@@ -50,7 +50,7 @@ export default function Register() {
         <div className='container register'>
             <div className="row">
                 <div className="col-md-6 col-sm-12">
-                    <h1 className="greet">Welcome To My Blog</h1>
+                    <h1 className="greet">Welcome To Rem Blog</h1>
                     {messages && <Messages messages={messages} />}
                     <form className='register-form' onSubmit={formik.handleSubmit}>
                         <div className="register-form-group">

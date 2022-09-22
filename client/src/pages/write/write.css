@@ -4,9 +4,9 @@
 }
 
 .write img {
-    width: 80vw;
-    height: 400px;
-    object-fit: fill;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
     margin-bottom: 20px;
     border-radius: 2%;
 }
@@ -16,7 +16,7 @@
     margin-top: 30px;
 }
 
-.write-form-group  {
+.write-form-group {
     display: flex;
 }
 
@@ -41,7 +41,7 @@
     margin-left: 20px;
 }
 
-.write .msg {
+.write .desc {
     outline: none;
     border: none;
     width: 70vw;
@@ -55,20 +55,20 @@
     right: 105px;
 }
 
-@media (max-width: 768px) {    
+@media (max-width: 768px) {
     .write .post {
         right: 10px;
-    }   
-    
+    }
+
     .write img {
         width: 100vw;
         border-radius: 4%;
     }
 }
 
-@media (max-width: 500px) {    
+@media (max-width: 500px) {
     .write img {
         border-radius: 30px;
     }
-    
+
 }

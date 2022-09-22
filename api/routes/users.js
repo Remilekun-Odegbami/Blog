@@ -77,7 +77,12 @@ router.get('/', async (req, res) => {
 
         });
     } catch (err) {
-        res.status(500).json(err);
+        res.status(500).json({
+            err,
+            message: "Cannot get users. Please check your connection",
+            success: 0
+
+        });;
     }
 })
 
@@ -93,7 +98,11 @@ router.get('/:id', async (req, res) => {
 
         });
     } catch (err) {
-        res.status(500).json(err);
+        res.status(404).json({
+            others: others,
+            message: "User not found",
+            success: 0
+        });
     }
 })
 
