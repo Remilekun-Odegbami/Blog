@@ -4,14 +4,12 @@ import { useContext } from 'react';
 import { Context } from '../../context/Context';
 
 export default function Topbar() {
-  // const { user, dispatch } = useContext(Context);
+  const { user, dispatch } = useContext(Context);
 
-  // const handleLogout = () => {
-  //   sessionStorage.clear();
-  //   dispatch({ type: "LOGOUT" });
-  // }
-
-  const user = true;
+  const handleLogout = () => {
+    sessionStorage.clear();
+    dispatch({ type: "LOGOUT" });
+  }
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light top">
@@ -30,13 +28,10 @@ export default function Topbar() {
             {user ? (
               <>
                 <div className="dropdown">
-                  <img src="https://tse1.mm.bing.net/th?id=OIP.W0A-yxAlLbJYqAOQfOApwgHaE6&pid=Api&P=0" alt="" />
-                  {/* <img src={user.others.profileImg} alt={user.others.username} className="profile-img" /> */}
+                  <img src={user.others.profileImg} alt={user.others.username} className="profile-img" />
                   <ul className="dropdown-content" role="menu" aria-labelledby="menu1">
                     <li><Link to="/settings">My Profile</Link></li>
-                    <li><Link to=''
-                    // onClick={handleLogout}
-                    >{user && "log out"}</Link></li>
+                    <li><Link to='' onClick={handleLogout}>{user && "log out"}</Link></li>
                   </ul>
                 </div>
                 <div className="input-group search-group">
