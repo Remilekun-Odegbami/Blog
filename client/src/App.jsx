@@ -13,7 +13,8 @@ import { useContext } from "react";
 
 
 function App() {
-  const { user } = useContext(Context);
+  // const { user } = useContext(Context);
+
 
   return (
     <div className="App">
@@ -21,14 +22,23 @@ function App() {
         <BrowserRouter>
           <Topbar />
           <Routes>
-            <Route exact path="/" element={user ? <Home /> : <Register />} />
+            <Route exact path="/" element={<Home />} />
+            <Route path="/write" element={<Write />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/login" element={<Home />} />
+            <Route path="/register" element={<Home />} />
+            <Route path="/post/:postId" element={<Single />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            {/* <Route exact path="/" element={user ? <Home /> : <Register />} />
             <Route path="/write" element={user ? <Write /> : <Register />} />
             <Route path="/settings" element={user ? <Settings /> : <Register />} />
             <Route path="/login" element={user ? <Home /> : <Login />} />
             <Route path="/register" element={user ? <Home /> : <Register />} />
             <Route path="/post/:postId" element={<Single />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/posts" element={<Posts />} />
+            <Route path="/posts" element={<Posts />} /> */}
           </Routes>
         </BrowserRouter>
       </header>
